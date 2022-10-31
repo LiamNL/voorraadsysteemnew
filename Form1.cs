@@ -22,7 +22,7 @@ namespace voorraadsysteemnew
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "select * from voorraadsysteem";
+            comm.CommandText = "select * from gerecht";
             NpgsqlDataReader dr = comm.ExecuteReader();
             if (dr.HasRows)
             {

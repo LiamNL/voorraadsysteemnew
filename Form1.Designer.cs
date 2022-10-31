@@ -52,7 +52,7 @@
             this.dgvgerecht.Name = "dgvgerecht";
             this.dgvgerecht.RowHeadersWidth = 51;
             this.dgvgerecht.RowTemplate.Height = 24;
-            this.dgvgerecht.Size = new System.Drawing.Size(231, 347);
+            this.dgvgerecht.Size = new System.Drawing.Size(754, 347);
             this.dgvgerecht.TabIndex = 2;
             // 
             // Form1
