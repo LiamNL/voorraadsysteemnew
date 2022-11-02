@@ -39,7 +39,7 @@
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(143, 26);
             this.btnexit.TabIndex = 1;
-            this.btnexit.Text = "Exit";
+            this.btnexit.Text = "Afsluiten";
             this.btnexit.UseVisualStyleBackColor = true;
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
