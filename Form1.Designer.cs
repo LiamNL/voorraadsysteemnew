@@ -45,9 +45,14 @@
             // 
             // dgvgerecht
             // 
+            this.dgvgerecht.AllowUserToAddRows = false;
+            this.dgvgerecht.AllowUserToDeleteRows = false;
+            this.dgvgerecht.AllowUserToResizeColumns = false;
+            this.dgvgerecht.AllowUserToResizeRows = false;
             this.dgvgerecht.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvgerecht.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvgerecht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvgerecht.Enabled = false;
             this.dgvgerecht.Location = new System.Drawing.Point(12, 12);
             this.dgvgerecht.Name = "dgvgerecht";
             this.dgvgerecht.RowHeadersWidth = 51;
