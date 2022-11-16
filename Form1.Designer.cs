@@ -30,6 +30,8 @@
         {
             this.btnexit = new System.Windows.Forms.Button();
             this.dgvgerecht = new System.Windows.Forms.DataGridView();
+            this.txtnaam = new System.Windows.Forms.TextBox();
+            this.txtgewicht = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgerecht)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,8 +59,23 @@
             this.dgvgerecht.Name = "dgvgerecht";
             this.dgvgerecht.RowHeadersWidth = 51;
             this.dgvgerecht.RowTemplate.Height = 24;
-            this.dgvgerecht.Size = new System.Drawing.Size(754, 347);
+            this.dgvgerecht.Size = new System.Drawing.Size(578, 347);
             this.dgvgerecht.TabIndex = 2;
+            // 
+            // txtnaam
+            // 
+            this.txtnaam.Location = new System.Drawing.Point(697, 12);
+            this.txtnaam.Name = "txtnaam";
+            this.txtnaam.Size = new System.Drawing.Size(155, 22);
+            this.txtnaam.TabIndex = 3;
+            this.txtnaam.TextChanged += new System.EventHandler(this.txtnaam_TextChanged);
+            // 
+            // txtgewicht
+            // 
+            this.txtgewicht.Location = new System.Drawing.Point(697, 53);
+            this.txtgewicht.Name = "txtgewicht";
+            this.txtgewicht.Size = new System.Drawing.Size(155, 22);
+            this.txtgewicht.TabIndex = 4;
             // 
             // Form1
             // 
@@ -66,6 +83,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(1056, 496);
+            this.Controls.Add(this.txtgewicht);
+            this.Controls.Add(this.txtnaam);
             this.Controls.Add(this.dgvgerecht);
             this.Controls.Add(this.btnexit);
             this.Name = "Form1";
@@ -73,12 +92,15 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvgerecht)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.DataGridView dgvgerecht;
+        private System.Windows.Forms.TextBox txtnaam;
+        private System.Windows.Forms.TextBox txtgewicht;
     }
 }
 

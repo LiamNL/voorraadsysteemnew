@@ -59,5 +59,10 @@ namespace voorraadsysteemnew
         {
 
         }
+
+        private void txtnaam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
