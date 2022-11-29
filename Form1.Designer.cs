@@ -67,6 +67,7 @@
             this.dgvgerecht.RowTemplate.Height = 24;
             this.dgvgerecht.Size = new System.Drawing.Size(578, 347);
             this.dgvgerecht.TabIndex = 2;
+            this.dgvgerecht.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgerecht_CellContentClick);
             // 
             // txtnaam
             // 

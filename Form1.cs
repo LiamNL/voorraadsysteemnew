@@ -113,14 +113,9 @@ namespace voorraadsysteemnew
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            string _pId = txtId.Text;
+            string _PId = txtId.Text;
             string _naam = txtnaam.Text;
-            string _Gewicht = txtgewicht.Text;
-
-
-
-
-
+            string _gw = txtgewicht.Text;
 
             if (txtId.Visible == false && lblId.Visible == false)
             {
@@ -128,19 +123,19 @@ namespace voorraadsysteemnew
                 lblId.Visible = true;
             }
 
-            else if (!string.IsNullOrEmpty(_pId))
+            else if (!string.IsNullOrEmpty(_PId))
             {
                 try
                 {
                     int _Fid = Convert.ToInt32(txtId.Text);
                     con.Open();
 
-                    cmd = "UPDATE gerecht SET Naam = @Naam, Gewicht = @Gewicht" + "WHERE Product_ID = @Product_ID";
+                    cmd = "UPDATE gerecht SET naam = "+ _naam+" gewicht = "+14.6 + " WHERE productid = "+14 ;
                     command = new NpgsqlCommand(cmd, con);
 
-                    command.Parameters.Add(new NpgsqlParameter("@Product_ID", _pId));
-                    command.Parameters.Add(new NpgsqlParameter("@Naam", _naam));
-                    command.Parameters.Add(new NpgsqlParameter("@Gewicht", _Gewicht));
+                   /* command.Parameters.AddWithValue("ProductID", 14);
+                    command.Parameters.AddWithValue("Naam", _naam);
+                    command.Parameters.AddWithValue("gewicht", 14.6);*/
                     
 
                    int _result1 = command.ExecuteNonQuery();
@@ -185,6 +180,11 @@ namespace voorraadsysteemnew
         private void btnrefresh_Click(object sender, EventArgs e)
         {
             RefreshGridView();
+        }
+
+        private void dgvgerecht_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
