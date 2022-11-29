@@ -132,7 +132,7 @@ namespace voorraadsysteemnew
 
                     cmd = "UPDATE gerecht SET naam = "+ _naam+" gewicht = "+14.6 + " WHERE productid = "+14 ;
                     command = new NpgsqlCommand(cmd, con);
-
+                    /* test
                    /* command.Parameters.AddWithValue("ProductID", 14);
                     command.Parameters.AddWithValue("Naam", _naam);
                     command.Parameters.AddWithValue("gewicht", 14.6);*/
