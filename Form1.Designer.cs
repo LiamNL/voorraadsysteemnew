@@ -67,6 +67,7 @@
             this.dgvgerecht.Enabled = false;
             this.dgvgerecht.Location = new System.Drawing.Point(12, 12);
             this.dgvgerecht.Name = "dgvgerecht";
+            this.dgvgerecht.ReadOnly = true;
             this.dgvgerecht.RowHeadersWidth = 51;
             this.dgvgerecht.RowTemplate.Height = 24;
             this.dgvgerecht.Size = new System.Drawing.Size(578, 347);
