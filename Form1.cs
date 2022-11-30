@@ -32,7 +32,7 @@ namespace voorraadsysteemnew
            // dit zorgd dat de commands connecten met de database, zodat je ze kan gebruiken
             comm.CommandType = CommandType.Text;
             //dit is dat de command die je wilt doen als datatype een text type is.
-            comm.CommandText = "select * from gerecht";
+            comm.CommandText = "select naam, gewicht, id, prijs, vegetarisch from gerecht";
             //dit is de query
             NpgsqlDataReader dr = comm.ExecuteReader();
             //dit zorgd ervoor dat de datareader zijn werk doet, hij doet: datapakken van de database en stopt het in een datatable(de gridview)
