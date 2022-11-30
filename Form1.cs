@@ -125,6 +125,8 @@ namespace voorraadsysteemnew
             {
                 txtId.Visible = true;
                 lblId.Visible = true;
+                barcodeId.Visible = false;
+                Barcode.Visible = false;
             }
 
             else if (!string.IsNullOrEmpty(_PId))
@@ -197,6 +199,74 @@ namespace voorraadsysteemnew
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string _barcode = barcodeId.Text;
+
+            if (Barcode.Visible == false && barcodeId.Visible == false)
+            {
+                barcodeId.Visible = true;
+                Barcode.Visible = true;
+                txtId.Visible = false;
+                lblId.Visible = false;
+
+            }
+
+            else if (!string.IsNullOrEmpty(_barcode))
+            {
+                try
+                {
+                    con.Open();
+
+                    cmd = "delete from gerecht where naam ='" + barcodeId.Text + "' ";
+                    command = new NpgsqlCommand(cmd, con);
+
+
+
+                    int _result1 = command.ExecuteNonQuery();
+
+                    if (_result1 > 0)
+                    {
+                        MessageBox.Show("Item removed");
+
+
+
+                        RefreshGridView();
+                        con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Item not removed");
+                        con.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Record is not Removed or Found!" + ex);
+                    con.Close();
+                }
+                finally
+                {
+                    command.Dispose();
+                    con.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in barcode");
+            }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

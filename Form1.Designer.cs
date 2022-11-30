@@ -42,6 +42,9 @@
             this.txtvege = new System.Windows.Forms.TextBox();
             this.lblprijs = new System.Windows.Forms.Label();
             this.txtprijs = new System.Windows.Forms.TextBox();
+            this.Remove = new System.Windows.Forms.Button();
+            this.Barcode = new System.Windows.Forms.Label();
+            this.barcodeId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgerecht)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,12 +188,46 @@
             this.txtprijs.Size = new System.Drawing.Size(155, 22);
             this.txtprijs.TabIndex = 16;
             // 
+            // Remove
+            // 
+            this.Remove.Location = new System.Drawing.Point(920, 148);
+            this.Remove.Name = "Remove";
+            this.Remove.Size = new System.Drawing.Size(124, 23);
+            this.Remove.TabIndex = 17;
+            this.Remove.Text = "Remove";
+            this.Remove.UseVisualStyleBackColor = true;
+            this.Remove.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Barcode
+            // 
+            this.Barcode.BackColor = System.Drawing.Color.LightGreen;
+            this.Barcode.Location = new System.Drawing.Point(646, 9);
+            this.Barcode.Name = "Barcode";
+            this.Barcode.Size = new System.Drawing.Size(152, 23);
+            this.Barcode.TabIndex = 18;
+            this.Barcode.Text = "Barcode";
+            this.Barcode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Barcode.Visible = false;
+            this.Barcode.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // barcodeId
+            // 
+            this.barcodeId.Location = new System.Drawing.Point(646, 35);
+            this.barcodeId.Name = "barcodeId";
+            this.barcodeId.Size = new System.Drawing.Size(152, 22);
+            this.barcodeId.TabIndex = 19;
+            this.barcodeId.Visible = false;
+            this.barcodeId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1106, 496);
+            this.Controls.Add(this.barcodeId);
+            this.Controls.Add(this.Barcode);
+            this.Controls.Add(this.Remove);
             this.Controls.Add(this.txtprijs);
             this.Controls.Add(this.lblprijs);
             this.Controls.Add(this.txtvege);
@@ -229,6 +266,9 @@
         private System.Windows.Forms.TextBox txtvege;
         private System.Windows.Forms.Label lblprijs;
         private System.Windows.Forms.TextBox txtprijs;
+        private System.Windows.Forms.Button Remove;
+        private System.Windows.Forms.Label Barcode;
+        private System.Windows.Forms.TextBox barcodeId;
     }
 }
 
