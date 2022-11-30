@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace voorraadsysteemnew
 {
@@ -31,7 +32,7 @@ namespace voorraadsysteemnew
            // dit zorgd dat de commands connecten met de database, zodat je ze kan gebruiken
             comm.CommandType = CommandType.Text;
             //dit is dat de command die je wilt doen als datatype een text type is.
-            comm.CommandText = "select * from gerecht";
+            comm.CommandText = "select naam, gewicht, id, prijs, vegetarisch from gerecht";
             //dit is de query
             NpgsqlDataReader dr = comm.ExecuteReader();
             //dit zorgd ervoor dat de datareader zijn werk doet, hij doet: datapakken van de database en stopt het in een datatable(de gridview)
@@ -63,7 +64,7 @@ namespace voorraadsysteemnew
                 else if (con.State != ConnectionState.Open)
                 {
                     con.Open();
-                    cmd = "select * from gerecht";
+                    cmd = "select naam, gewicht, id, prijs, vegetarisch from gerecht";
                     NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd, con);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -116,6 +117,9 @@ namespace voorraadsysteemnew
             string _PId = txtId.Text;
             string _naam = txtnaam.Text;
             string _gw = txtgewicht.Text;
+            string _vege = txtvege.Text;
+            string _prijs = txtprijs.Text;
+            
 
             if (txtId.Visible == false && lblId.Visible == false)
             {
@@ -127,18 +131,21 @@ namespace voorraadsysteemnew
             {
                 try
                 {
-                    int _Fid = Convert.ToInt32(txtId.Text);
+                    
                     con.Open();
 
-                    cmd = "UPDATE gerecht SET naam = "+ _naam+" gewicht = "+14.6 + " WHERE productid = "+14 ;
-                    command = new NpgsqlCommand(cmd, con);
-
-                   /* command.Parameters.AddWithValue("ProductID", 14);
-                    command.Parameters.AddWithValue("Naam", _naam);
-                    command.Parameters.AddWithValue("gewicht", 14.6);*/
+                   // cmd = "UPDATE gerecht SET naam = \"naam\", gewicht = Gewicht WHERE id = id "; ;
+                    cmd = "Update gerecht SET naam = @Name, gewicht = '"+_gw+"', vegetarisch = @vegetarisch, prijs = '"+_prijs+"' WHERE id = '"+_PId+"' " ;
                     
+                    command = new NpgsqlCommand(cmd, con);
+                   
+                    
+                    command.Parameters.AddWithValue("@Name", _naam); 
+                    command.Parameters.AddWithValue("5", _prijs);
+                    command.Parameters.AddWithValue("@vegetarisch", _vege);
 
-                   int _result1 = command.ExecuteNonQuery();
+
+                    int _result1 = command.ExecuteNonQuery();
 
                     if (_result1 > 0)
                     {
@@ -147,6 +154,8 @@ namespace voorraadsysteemnew
                         txtnaam.Text = "";
                         txtId.Text = "";
                         txtgewicht.Text = "";
+                        txtprijs.Text = "";
+                        txtvege.Text = "";
 
                         RefreshGridView();
                         con.Close();
@@ -170,7 +179,7 @@ namespace voorraadsysteemnew
             }
             else
             {
-                MessageBox.Show("There is an error");
+                MessageBox.Show("Please fill in an ID to update an item");
             }
 
 
@@ -183,6 +192,11 @@ namespace voorraadsysteemnew
         }
 
         private void dgvgerecht_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
