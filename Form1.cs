@@ -52,6 +52,23 @@ namespace voorraadsysteemnew
         }
 
 
+
+        public void Emptytxt()
+        {
+            txtnaam.Text = "";
+            txtId.Text = "";
+            txtgewicht.Text = "";
+            txtprijs.Text = "";
+            txtvege.Text = "";
+            barcodeId.Text = "";
+            txtId.Text = "";
+
+
+
+
+        }
+
+
         public void RefreshGridView()
         {
             try
@@ -119,6 +136,7 @@ namespace voorraadsysteemnew
             string _gw = txtgewicht.Text;
             string _vege = txtvege.Text;
             string _prijs = txtprijs.Text;
+            barcodeId.Text = "";
             
 
             if (txtId.Visible == false && lblId.Visible == false)
@@ -153,11 +171,7 @@ namespace voorraadsysteemnew
                     {
                         MessageBox.Show("User Updated");
 
-                        txtnaam.Text = "";
-                        txtId.Text = "";
-                        txtgewicht.Text = "";
-                        txtprijs.Text = "";
-                        txtvege.Text = "";
+                        Emptytxt();
 
                         RefreshGridView();
                         con.Close();
@@ -167,6 +181,7 @@ namespace voorraadsysteemnew
                         MessageBox.Show("User not updated");
                         con.Close();
                     }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -213,6 +228,7 @@ namespace voorraadsysteemnew
                 Barcode.Visible = true;
                 txtId.Visible = false;
                 lblId.Visible = false;
+                txtId.Text = "";
 
             }
 
@@ -234,6 +250,7 @@ namespace voorraadsysteemnew
                         MessageBox.Show("Item removed");
 
 
+                        Emptytxt();
 
                         RefreshGridView();
                         con.Close();
