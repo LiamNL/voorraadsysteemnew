@@ -38,7 +38,10 @@
             this.lblId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnrefresh = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblvege = new System.Windows.Forms.Label();
+            this.txtvege = new System.Windows.Forms.TextBox();
+            this.lblprijs = new System.Windows.Forms.Label();
+            this.txtprijs = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgerecht)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,15 +150,39 @@
             this.btnrefresh.UseVisualStyleBackColor = true;
             this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
             // 
-            // label1
+            // lblvege
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(643, 271);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblvege.BackColor = System.Drawing.Color.LightGreen;
+            this.lblvege.Location = new System.Drawing.Point(646, 258);
+            this.lblvege.Name = "lblvege";
+            this.lblvege.Size = new System.Drawing.Size(155, 23);
+            this.lblvege.TabIndex = 13;
+            this.lblvege.Text = "Vegetarisch";
+            this.lblvege.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtvege
+            // 
+            this.txtvege.Location = new System.Drawing.Point(646, 284);
+            this.txtvege.Name = "txtvege";
+            this.txtvege.Size = new System.Drawing.Size(155, 22);
+            this.txtvege.TabIndex = 14;
+            // 
+            // lblprijs
+            // 
+            this.lblprijs.BackColor = System.Drawing.Color.LightGreen;
+            this.lblprijs.Location = new System.Drawing.Point(646, 320);
+            this.lblprijs.Name = "lblprijs";
+            this.lblprijs.Size = new System.Drawing.Size(155, 20);
+            this.lblprijs.TabIndex = 15;
+            this.lblprijs.Text = "Prijs";
+            this.lblprijs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtprijs
+            // 
+            this.txtprijs.Location = new System.Drawing.Point(646, 343);
+            this.txtprijs.Name = "txtprijs";
+            this.txtprijs.Size = new System.Drawing.Size(155, 22);
+            this.txtprijs.TabIndex = 16;
             // 
             // Form1
             // 
@@ -163,7 +190,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1106, 496);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtprijs);
+            this.Controls.Add(this.lblprijs);
+            this.Controls.Add(this.txtvege);
+            this.Controls.Add(this.lblvege);
             this.Controls.Add(this.btnrefresh);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
@@ -194,7 +224,10 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnrefresh;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblvege;
+        private System.Windows.Forms.TextBox txtvege;
+        private System.Windows.Forms.Label lblprijs;
+        private System.Windows.Forms.TextBox txtprijs;
     }
 }
 

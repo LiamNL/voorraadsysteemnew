@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace voorraadsysteemnew
 {
@@ -63,7 +64,7 @@ namespace voorraadsysteemnew
                 else if (con.State != ConnectionState.Open)
                 {
                     con.Open();
-                    cmd = "select naam, gewicht, id from gerecht";
+                    cmd = "select naam, gewicht, id, prijs, vegetarisch from gerecht";
                     NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd, con);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -116,6 +117,8 @@ namespace voorraadsysteemnew
             string _PId = txtId.Text;
             string _naam = txtnaam.Text;
             string _gw = txtgewicht.Text;
+            string _vege = txtvege.Text;
+            string _prijs = txtprijs.Text;
 
             if (txtId.Visible == false && lblId.Visible == false)
             {
@@ -131,16 +134,18 @@ namespace voorraadsysteemnew
                     con.Open();
 
                    // cmd = "UPDATE gerecht SET naam = \"naam\", gewicht = Gewicht WHERE id = id "; ;
-                    cmd = "Update gerecht SET naam = @Name, gewicht = @Gewicht, prijs = @Prijs, vegetarisch = @vegetarisch WHERE id = @id" ;
+                    cmd = "Update gerecht SET naam = @Name, gewicht = '"+_gw+"', vegetarisch = @vegetarisch, prijs = '"+_prijs+"' WHERE id = '"+_PId+"' " ;
                     
                     command = new NpgsqlCommand(cmd, con);
                    
-                    command.Parameters.AddWithValue("@id", _PId);
-                    command.Parameters.AddWithValue("@Name", _naam);
-                    command.Parameters.AddWithValue("@Gewicht", _gw);
                     
+                    command.Parameters.AddWithValue("@Name", _naam);
+                    
+                    command.Parameters.AddWithValue("5", _prijs);
+                    command.Parameters.AddWithValue("@vegetarisch", _vege);
 
-                   int _result1 = command.ExecuteNonQuery();
+
+                    int _result1 = command.ExecuteNonQuery();
 
                     if (_result1 > 0)
                     {
@@ -149,6 +154,8 @@ namespace voorraadsysteemnew
                         txtnaam.Text = "";
                         txtId.Text = "";
                         txtgewicht.Text = "";
+                        txtprijs.Text = "";
+                        txtvege.Text = "";
 
                         RefreshGridView();
                         con.Close();
