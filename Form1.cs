@@ -63,7 +63,7 @@ namespace voorraadsysteemnew
                 else if (con.State != ConnectionState.Open)
                 {
                     con.Open();
-                    cmd = "select * from gerecht";
+                    cmd = "select naam, gewicht, id from gerecht";
                     NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd, con);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -130,12 +130,14 @@ namespace voorraadsysteemnew
                     int _Fid = Convert.ToInt32(txtId.Text);
                     con.Open();
 
-                    cmd = "UPDATE gerecht SET naam = "+ _naam+" gewicht = "+14.6 + " WHERE productid = "+14 ;
+                   // cmd = "UPDATE gerecht SET naam = \"naam\", gewicht = Gewicht WHERE id = id "; ;
+                    cmd = "Update gerecht SET naam = @Name, gewicht = @Gewicht, prijs = @Prijs, vegetarisch = @vegetarisch WHERE id = @id" ;
+                    
                     command = new NpgsqlCommand(cmd, con);
-                    /* test
-                   /* command.Parameters.AddWithValue("ProductID", 14);
-                    command.Parameters.AddWithValue("Naam", _naam);
-                    command.Parameters.AddWithValue("gewicht", 14.6);*/
+                   
+                    command.Parameters.AddWithValue("@id", _PId);
+                    command.Parameters.AddWithValue("@Name", _naam);
+                    command.Parameters.AddWithValue("@Gewicht", _gw);
                     
 
                    int _result1 = command.ExecuteNonQuery();
@@ -183,6 +185,11 @@ namespace voorraadsysteemnew
         }
 
         private void dgvgerecht_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

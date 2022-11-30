@@ -38,6 +38,7 @@
             this.lblId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnrefresh = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgerecht)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,12 +147,23 @@
             this.btnrefresh.UseVisualStyleBackColor = true;
             this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(643, 271);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1106, 496);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnrefresh);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
@@ -182,6 +194,7 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnrefresh;
+        private System.Windows.Forms.Label label1;
     }
 }
 
