@@ -119,6 +119,7 @@ namespace voorraadsysteemnew
             string _gw = txtgewicht.Text;
             string _vege = txtvege.Text;
             string _prijs = txtprijs.Text;
+            
 
             if (txtId.Visible == false && lblId.Visible == false)
             {
@@ -130,7 +131,7 @@ namespace voorraadsysteemnew
             {
                 try
                 {
-                    int _Fid = Convert.ToInt32(txtId.Text);
+                    
                     con.Open();
 
                    // cmd = "UPDATE gerecht SET naam = \"naam\", gewicht = Gewicht WHERE id = id "; ;
@@ -139,8 +140,7 @@ namespace voorraadsysteemnew
                     command = new NpgsqlCommand(cmd, con);
                    
                     
-                    command.Parameters.AddWithValue("@Name", _naam);
-                    
+                    command.Parameters.AddWithValue("@Name", _naam); 
                     command.Parameters.AddWithValue("5", _prijs);
                     command.Parameters.AddWithValue("@vegetarisch", _vege);
 
@@ -179,7 +179,7 @@ namespace voorraadsysteemnew
             }
             else
             {
-                MessageBox.Show("There is an error");
+                MessageBox.Show("Please fill in an ID to update an item");
             }
 
 
