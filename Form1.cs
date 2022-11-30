@@ -127,8 +127,7 @@ namespace voorraadsysteemnew
             {
                 try
                 {
-                    //test
-                    int _Fid = Convert.ToInt32(txtId.Text);
+
                     con.Open();
 
                     cmd = "UPDATE gerecht SET naam = "+ _naam+" gewicht = "+14.6 + " WHERE productid = "+14 ;
