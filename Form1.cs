@@ -94,13 +94,13 @@ namespace voorraadsysteemnew
                 }
                 else
                 {
-                    MessageBox.Show("No Records Found!!");
+                    MessageBox.Show("No Data Found!!");
                     con.Close();
                 }
             }
             catch
             {
-                MessageBox.Show("There are no Users Found!!");
+                MessageBox.Show("There is no data found!!");
 
             }
         }
@@ -169,7 +169,7 @@ namespace voorraadsysteemnew
 
                     if (_result1 > 0)
                     {
-                        MessageBox.Show("Data Updated");
+                        MessageBox.Show("Item Updated");
 
                         Emptytxt();
 
@@ -178,14 +178,14 @@ namespace voorraadsysteemnew
                     }
                     else
                     {
-                        MessageBox.Show("Data not updated");
+                        MessageBox.Show("Item not updated");
                         con.Close();
                     }
                     
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Data is not Updated or Found!" + ex);
+                    MessageBox.Show("Item is not Updated or Found!" + ex);
                     con.Close();
                 }
                 finally
