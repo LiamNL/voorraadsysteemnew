@@ -169,7 +169,7 @@ namespace voorraadsysteemnew
 
                     if (_result1 > 0)
                     {
-                        MessageBox.Show("User Updated");
+                        MessageBox.Show("Data Updated");
 
                         Emptytxt();
 
@@ -178,14 +178,14 @@ namespace voorraadsysteemnew
                     }
                     else
                     {
-                        MessageBox.Show("User not updated");
+                        MessageBox.Show("Data not updated");
                         con.Close();
                     }
                     
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Record is not Updated or Found!" + ex);
+                    MessageBox.Show("Data is not Updated or Found!" + ex);
                     con.Close();
                 }
                 finally
